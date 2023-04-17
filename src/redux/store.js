@@ -17,6 +17,7 @@ const { configureStore, combineReducers } = require('@reduxjs/toolkit');
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['filter'],
 };
 
 const rootReducer = combineReducers({ contacts: contactsReducer });
