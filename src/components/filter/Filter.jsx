@@ -1,6 +1,6 @@
 import css from '../filter/Filter.module.css';
 import { useDispatch } from 'react-redux';
-import { setValueFilter } from 'redux/contactsSplice';
+import { setValueFilter } from 'redux/filtersSplice';
 
 const shortid = require('shortid');
 

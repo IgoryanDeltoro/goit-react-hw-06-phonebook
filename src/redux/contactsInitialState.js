@@ -1,1 +1,1 @@
-export const contactsInitialState = { contacts: [], filter: '' };
+// export const contactsInitialState = { contacts: [], filter: '' };
