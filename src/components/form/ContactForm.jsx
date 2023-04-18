@@ -29,10 +29,12 @@ const ContactForm = () => {
 
   const hendleSubmit = event => {
     event.preventDefault();
+    console.log(name);
+    console.log(contacts);
     const index = contacts.findIndex(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-    if (index !== 0) {
+    if (index === -1) {
       dispatch(addContacts({ name, number }));
       reset();
       return;
