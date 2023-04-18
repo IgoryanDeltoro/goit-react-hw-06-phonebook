@@ -29,8 +29,6 @@ const ContactForm = () => {
 
   const hendleSubmit = event => {
     event.preventDefault();
-    console.log(name);
-    console.log(contacts);
     const index = contacts.findIndex(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
