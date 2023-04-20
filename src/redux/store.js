@@ -18,17 +18,18 @@ const { configureStore, combineReducers } = require('@reduxjs/toolkit');
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: 'contacts',
 };
 
-const rootReducer = combineReducers({ contacts: contactsReducer });
+const rootReducer = combineReducers({
+  contacts: contactsReducer,
+  filter: filtersReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    contacts: persistedReducer,
-    filter: filtersReducer,
-  },
+  reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
